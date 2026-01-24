@@ -15,6 +15,8 @@ int ft_isdigit(int argument); // verificar se é dígito
 int ft_isalnum(int argument); // verificar se é alfanumérico
 int ft_isascii(int argument); // verificar se é caractere ASCII
 int ft_isprint(int argument); // verificar se é caractere imprimível
+int ft_toupper(int character); // converter caractere para maiúsculo
+int ft_tolower(int character); // converter caractere para minúsculo
 
 /*
     <string.h> functions
