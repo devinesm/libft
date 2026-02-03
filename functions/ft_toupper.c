@@ -1,7 +1,9 @@
-int ft_toupper(int character)
-{
-    if ((character >= 'a') && (character <= 'z'))
-        return (character - 32);
+#include "libft.h"
 
-    return (character);
+int ft_toupper(int argument)
+{
+    if ((argument >= 'a') && (argument <= 'z'))
+        return (argument - 32);
+
+    return (argument);
 }

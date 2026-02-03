@@ -5,6 +5,7 @@
     standard library includes
 */
 # include <string.h> // for size_t
+#include <stdlib.h> // for malloc, free
 
 
 /*
@@ -15,8 +16,8 @@ int ft_isdigit(int argument); // verificar se é dígito
 int ft_isalnum(int argument); // verificar se é alfanumérico
 int ft_isascii(int argument); // verificar se é caractere ASCII
 int ft_isprint(int argument); // verificar se é caractere imprimível
-int ft_toupper(int character); // converter caractere para maiúsculo
-int ft_tolower(int character); // converter caractere para minúsculo
+int ft_toupper(int argument); // converter caractere para maiúsculo
+int ft_tolower(int argument); // converter caractere para minúsculo
 
 /*
     <string.h> functions
@@ -32,5 +33,13 @@ char *ft_strchr(const char *str, int character); // localizar primeira ocorrênc
 char *ft_strrchr(const char *str, int character); // localizar última ocorrência de um caractere em uma string
 int ft_strncmp(const char *str1, const char *str2, size_t length); // comparar duas strings até um determinado comprimento
 void *ft_memchr(const void *str, int character, size_t length); // localizar um byte em uma área de memória
+int ft_memcmp(const void *s1, const void *s2, size_t size); // comparar duas áreas de memória
+char *ft_strnstr(const char *haystack, const char *needle, size_t len); // localizar uma substring em uma string com tamanho limitado
 
+
+/*
+    <stdlib.h> functions
+*/
+int ft_atoi(const char *str); // converter string para inteiro
+void *ft_calloc(size_t len, size_t size); // alocar memória e inicializá-la com zeros
 #endif

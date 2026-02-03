@@ -8,12 +8,7 @@ void *ft_memmove(void *dest, const void *src, size_t length)
         return NULL;
 
     if (dest < src) {
-        index = 0;
-
-        while (index < length) {
-            ((unsigned char *)dest)[index] = ((unsigned char *)src)[index];
-            index++;
-        }
+        ft_memcpy(dest, src, length);
     }
     else {
         index = length;
