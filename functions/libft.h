@@ -4,8 +4,9 @@
 /*
     standard library includes
 */
-# include <string.h> // for size_t
+#include <string.h> // for size_t
 #include <stdlib.h> // for malloc, free
+#include <unistd.h> // for write
 
 
 /*
@@ -35,6 +36,7 @@ int ft_strncmp(const char *str1, const char *str2, size_t length); // comparar d
 void *ft_memchr(const void *str, int character, size_t length); // localizar um byte em uma área de memória
 int ft_memcmp(const void *s1, const void *s2, size_t size); // comparar duas áreas de memória
 char *ft_strnstr(const char *haystack, const char *needle, size_t len); // localizar uma substring em uma string com tamanho limitado
+char *ft_strdup(const char *s1); // duplicar uma string
 
 
 /*
@@ -42,4 +44,20 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len); // local
 */
 int ft_atoi(const char *str); // converter string para inteiro
 void *ft_calloc(size_t len, size_t size); // alocar memória e inicializá-la com zeros
+
+/*
+    Additional functions
+*/
+char *ft_substr(char const *s, unsigned int start, size_t len); // extrair uma substring de uma string
+char *ft_strjoin(char const *s1, char const *s2); // concatenar duas strings em uma nova string alocada dinamicamente
+char *ft_strtrim(char const *s1, char const *set); // remover caracteres específicos do início e do fim de uma string
+char **ft_split(char const *s, char c) // separa uma string em várias substrings delimitadas por um caractere.
+char **ft_itoa(int n); // converter um inteiro em uma string alocada dinamicamente
+char *ft_strmapi(const char *s, char (*f)(unsigned int, char)); // aplicar uma função a cada caractere de uma string e criar uma nova string com os resultados
+void ft_striteri(char *s, void (*f)(unsigned int, char*)); // aplicar uma função a cada caractere de uma string, modificando a string original
+void ft_putchar_fd(char c, int fd); // escrever um caractere em um descritor de arquivo específico
+void ft_putstr_fd(char *s, int fd); // escrever uma string em um descritor de arquivo específico
+void ft_putendl(char *s); // escrever uma string seguida de uma nova linha em um descritor de arquivo específico
+void ft_putnbr_fd(int n, int fd); // escrever um número inteiro em um descritor de arquivo específico
+
 #endif
