@@ -8,6 +8,11 @@
 #include <stdlib.h> // for malloc, free
 #include <unistd.h> // for write
 
+typedef struct s_list
+{
+	void *content;
+	struct s_list *next;
+} t_list;
 
 /*
     <ctype.h> functions
@@ -59,5 +64,18 @@ void ft_putchar_fd(char c, int fd); // escrever um caractere em um descritor de 
 void ft_putstr_fd(char *s, int fd); // escrever uma string em um descritor de arquivo específico
 void ft_putendl(char *s); // escrever uma string seguida de uma nova linha em um descritor de arquivo específico
 void ft_putnbr_fd(int n, int fd); // escrever um número inteiro em um descritor de arquivo específico
+
+/*
+    Linked list functions
+*/
+t_list *ft_lstnew(void *content); // criar um novo nó de lista
+void ft_lstadd_front(t_list **lst, t_list *new); // adicionar um nó no início da lista
+int ft_lstsize(t_list *lst); // contar o número de nós na lista
+t_list *ft_lstlast(t_list *lst); // obter o último nó da lista
+void ft_lstadd_back(t_list **lst, t_list *new); // adicionar um nó no final da lista
+void ft_lstdelone(t_list *lst, void (*del)(void*)); // excluir um nó da lista usando uma função de deleção
+void ft_lstclear(t_list **lst, void (*del)(void*)); // limpar toda a lista usando uma função de deleção
+void ft_lstiter(t_list *lst, void (*f)(void *)); // iterar sobre a lista e aplicar uma função a cada nó
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *)); // criar uma nova lista aplicando uma função a cada nó da lista original, usando uma função de deleção para limpar em caso de falha
 
 #endif
